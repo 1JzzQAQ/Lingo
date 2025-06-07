@@ -26,7 +26,6 @@ export const Header = () => {
                         </SignInButton>
                     </SignedOut>
                 </ClerkLoaded>
-
             </div> 
         </header>
     )
