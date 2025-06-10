@@ -32,8 +32,6 @@ export const LessonButton = ({
 
     if(cycleIndex <=2 ){
         indentationLevel = cycleIndex
-    }else if (cycleIndex <=4){
-        indentationLevel = 4 - cycleIndex
     }else if (cycleIndex <= 6){
         indentationLevel = 4-cycleIndex
     }else{
@@ -44,15 +42,15 @@ export const LessonButton = ({
 
     const isFirst = index === 0
     const isLast = index === totalCount
-    const isComleted = !current && !locked
+    const isCompleted = !current && !locked
 
-    const Icon = isComleted ? Check : isLast ? Crown : Star
+    const Icon = isCompleted ? Check : isLast ? Crown : Star
 
-    const herf = isComleted ? `/lesson/${id}` : "/lesson"
+    const href = isCompleted ? `/lesson/${id}` : "/lesson"
 
     return (
         <Link 
-            href={herf} 
+            href={href} 
             aria-disabled={locked} 
             style={{ pointerEvents: locked ? "none" : "auto"}}
         >
@@ -60,7 +58,7 @@ export const LessonButton = ({
                 className="relative"
                 style={{
                     right:`${rightPosition}px`,
-                    marginTop: isFirst && !isComleted ? 60 : 24
+                    marginTop: isFirst && !isCompleted ? 60 : 24
                 }}
             >
                 {current ? (
@@ -93,7 +91,7 @@ export const LessonButton = ({
                                         locked
                                         ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
                                         : "fill-primary-foreground text-primary-foreground",
-                                        isComleted && "fill-none stroke-[4]"
+                                        isCompleted && "fill-none stroke-[4]"
                                     )}
                                     style={{ width: "50%", height: "50%" }}
                                 />
@@ -113,7 +111,7 @@ export const LessonButton = ({
                                     locked
                                     ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
                                     : "fill-primary-foreground text-primary-foreground",
-                                    isComleted && "fill-none stroke-[4]"
+                                    isCompleted && "fill-none stroke-[4]"
                                 )}
                                 style={{ width: "50%", height: "50%" }}
                             />
