@@ -5,10 +5,10 @@ export const Footer = () => {
     return (
         <footer className="hidden lg:block h-20 w-full border-t-2 border-slate-200 p-2">
             <div className="max-w-screen-lg mx-auto flex items-center justify-evenly h-full">
-                <Button size="lg" variant="ghost" className="flex items-center">
+                {/* <Button size="lg" variant="ghost" className="flex items-center">
                     <Image src="/cn.svg" alt="Chinese" height={32} width={40} className="mr-4 rounded-md" />
                     Chinese
-                </Button>
+                </Button> */}
                 <Button size="lg" variant="ghost" className="flex items-center">
                     <Image src="/hr.svg" alt="Croatian" height={32} width={40} className="mr-4 rounded-md" />
                     Croatian

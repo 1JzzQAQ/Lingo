@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { getCourseById, getUserProgress } from "@/db/queries";
 import { userProgress } from "@/db/schema";
 import { auth, currentUser } from "@clerk/nextjs/server";
-import {redirect} from "next/navigation"
+import { redirect } from "next/navigation"
 
 
 export const upsertUserProgress = async (courseId:number) =>{
@@ -36,7 +36,7 @@ export const upsertUserProgress = async (courseId:number) =>{
             userName:user.firstName || "user",
             userImageSrc:user.imageUrl || "/mascot.svg"
         })
-
+        //手动清除特定路径的缓存，强制 Next.js 在下次访问时重新生成页面
         revalidatePath("/courses")
         revalidatePath("/learn")
         redirect("/learn")
@@ -48,7 +48,7 @@ export const upsertUserProgress = async (courseId:number) =>{
         userName:user.firstName || "user",
         userImageSrc:user.imageUrl || "/mascot.svg"
     })
-
+    //手动清除特定路径的缓存，强制 Next.js 在下次访问时重新生成页面
     revalidatePath("/courses")
     revalidatePath("/learn")
     redirect("/learn")
