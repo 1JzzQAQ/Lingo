@@ -2,7 +2,7 @@
 "use client"
 
 import Confetti from "react-confetti"
-import { challengeOptions, challenges } from "@/db/schema"
+import { challengeOptions, challenges, userSubscription } from "@/db/schema"
 import { useState, useTransition } from "react"
 import { Header } from "./header"
 import { QuestionBubble } from "./question-bubble"
@@ -26,7 +26,9 @@ type Props = {
         completed: boolean
         challengeOptions: typeof challengeOptions.$inferSelect[]
     })[]
-    userSubscription: any //TODO: Replace with subscription DB type
+    userSubscription: typeof userSubscription.$inferSelect &{
+        isActive:boolean
+    } | null; //TODO: Replace with subscription DB type
 }
 
 export const Quiz = ({
