@@ -25,7 +25,7 @@ export const List = ({courses,activeCourseId}:Props) => {
         startTransition(()=>{
             //更换课程
             upsertUserProgress(id)
-                //.catch(()=>toast.error("Something went wrong."))
+                .catch(()=>toast.error("Something went wrong."))
         })
     }
 
