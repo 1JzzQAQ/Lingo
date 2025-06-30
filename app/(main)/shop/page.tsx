@@ -10,14 +10,14 @@ import { Quests } from "@/components/quests"
 
 const ShopPage =async ()=>{
     const userProgressData = getUserProgress()
-    const userSunscriptionData = getUserSubscription()
+    const userSubscriptionData = getUserSubscription()
 
     const[
         userProgress,
         userSubscription
     ] = await Promise.all([
         userProgressData,
-        userSunscriptionData
+        userSubscriptionData
     ])
 
     if(!userProgress || !userProgress.activeCourse){
